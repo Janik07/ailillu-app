@@ -1,0 +1,534 @@
+.chip {
+  height: 36px;
+  padding: 0 13px;
+  border-radius: 18px;
+  background: var(--surf);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  flex: none;
+  border: 1.5px solid transparent;
+}
+
+.chip.on {
+  background: var(--soft);
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.chips {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding-bottom: 2px;
+}
+
+.chips::-webkit-scrollbar {
+  display: none;
+}
+
+.chips.wrap {
+  flex-wrap: wrap;
+}
+
+.btn {
+  height: 54px;
+  border-radius: 17px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: 16px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  text-decoration: none;
+}
+
+.btn.ghost {
+  background: var(--surf);
+  color: var(--ink);
+}
+
+.btn.link {
+  background: none;
+  color: var(--accent);
+  height: 42px;
+  font-size: 15px;
+}
+
+.btn.start {
+  justify-content: flex-start;
+}
+
+.btn[disabled] {
+  background: var(--surf2);
+  color: var(--muted);
+  cursor: default;
+}
+
+.iconbtn {
+  width: 42px;
+  height: 42px;
+  border-radius: 21px;
+  background: var(--surf);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+
+.iconbtn.tiny {
+  width: 34px;
+  height: 34px;
+}
+
+.search {
+  height: 46px;
+  border-radius: 15px;
+  background: var(--surf);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 14px;
+  color: var(--muted);
+}
+
+.search input {
+  flex: 1;
+  border: 0;
+  background: none;
+  outline: none;
+  font-size: 16px;
+  min-width: 0;
+  color: var(--ink);
+}
+
+.seg {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 16px;
+  background: var(--surf);
+}
+
+.seg button {
+  flex: 1;
+  height: 40px;
+  border-radius: 12px;
+  font-weight: 800;
+  font-size: 14px;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.seg button.on {
+  background: var(--bg);
+  color: var(--ink);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+}
+
+.seg.compact {
+  padding: 3px;
+}
+
+.seg.compact button {
+  height: 36px;
+  padding: 0 10px;
+}
+
+.list-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+  width: 100%;
+  text-align: left;
+}
+
+.thumb {
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
+  object-fit: cover;
+  flex: none;
+  background: var(--surf2);
+  display: block;
+}
+
+.thumb.sm {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+}
+
+.photo-empty {
+  display: block;
+  background: var(--surf2);
+}
+
+.initials {
+  border-radius: 18px;
+  flex: none;
+  background: var(--soft);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.modes {
+  display: flex;
+  gap: 10px;
+  margin-top: 4px;
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 600;
+  flex-wrap: wrap;
+}
+
+.modes span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.stepper {
+  display: inline-flex;
+  align-items: center;
+  height: 36px;
+  border-radius: 18px;
+  background: var(--surf);
+  flex: none;
+}
+
+.stepper button {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stepper b {
+  min-width: 18px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.header {
+  padding-block: 10px 8px;
+}
+
+.header-title {
+  font-size: 17px;
+  font-weight: 800;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.price {
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  height: 22px;
+  padding: 0 8px;
+  border-radius: 11px;
+  background: var(--soft);
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.badge.alert {
+  background: var(--warn);
+  color: #fff;
+}
+
+.note {
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: var(--soft);
+  font-size: 13px;
+  line-height: 1.45;
+  display: flex;
+  gap: 10px;
+}
+
+.note .icon {
+  color: var(--accent);
+}
+
+.demo {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.kaspi {
+  width: 26px;
+  height: 26px;
+  border-radius: 13px;
+  background: #f14635;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 800;
+  flex: none;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 40px 16px;
+  color: var(--muted);
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2.5px solid var(--surf2);
+  border-top-color: var(--accent);
+  animation: spin 0.8s linear infinite;
+}
+
+.load-error {
+  padding-block: 32px;
+}
+
+.skeleton-row {
+  display: flex;
+  gap: 12px;
+  padding: 10px 0;
+}
+
+.skeleton-row i {
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
+  background: var(--surf);
+  flex: none;
+}
+
+.skeleton-row span {
+  flex: 1;
+  height: 48px;
+  margin-top: 6px;
+  border-radius: 10px;
+  background: var(--surf);
+}
+
+.tabbar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: flex-start;
+  background: var(--bg);
+  border-top: 1px solid var(--line);
+  padding: 8px 4px calc(8px + env(safe-area-inset-bottom, 0px));
+  z-index: 5;
+}
+
+.tabbar button {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  font-size: 11px;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.tabbar button.on {
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.tabbar .qr {
+  width: 56px;
+  height: 56px;
+  margin-top: -24px;
+  border-radius: 28px;
+  background: var(--accent);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(103, 58, 183, 0.4);
+}
+
+.sheet-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.sheet-back {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 10, 25, 0.5);
+  animation: fade 0.18s ease-out;
+}
+
+.sheet {
+  position: relative;
+  background: var(--bg);
+  border-radius: 26px 26px 0 0;
+  max-height: 92%;
+  display: flex;
+  flex-direction: column;
+  animation: up 0.22s ease-out;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  overflow: hidden;
+}
+
+.grab {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0 6px;
+}
+
+.grab span {
+  width: 40px;
+  height: 5px;
+  border-radius: 3px;
+  background: var(--surf2);
+}
+
+.sheet-body {
+  padding-block: 4px 20px;
+}
+
+.toast {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 96px;
+  z-index: 30;
+  background: var(--ink);
+  color: var(--bg);
+  border-radius: 16px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: var(--shadow);
+  animation: up 0.2s ease-out;
+}
+
+.toast-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.toast-sub {
+  opacity: 0.75;
+}
+
+.toast-act {
+  color: #b39ddb;
+  font-weight: 800;
+}
+
+/* Used by several lazy chunks, so they live in the shared sheet. */
+.strong {
+  font-weight: 700;
+}
+
+.item-name {
+  font-weight: 600;
+}
+
+.center {
+  text-align: center;
+}
+
+.text-link {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.sheet-title {
+  font-size: 22px;
+}
+
+.index-group {
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  margin-top: 14px;
+}
+
+.index-row {
+  border-bottom: 0;
+  padding: 6px 0;
+}
+
+.index-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 11px;
+  object-fit: cover;
+  flex: none;
+}
+
+.walk {
+  margin-top: 3px;
+  font-weight: 700;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.layer {
+  position: absolute;
+  inset: 0;
+}
+
+.sheet-layer {
+  z-index: 20;
+}
+
+.route-loading {
+  position: absolute;
+  inset: 0;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.route-loading.sheet-loading {
+  background: rgba(15, 10, 25, 0.5);
+  color: #fff;
+}

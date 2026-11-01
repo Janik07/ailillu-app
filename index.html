@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#673AB7" />
+    <meta name="description" content="Ailillu: заведения, меню и заказ за столом" />
+    <title>Ailillu</title>
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" href="./icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="./icon-192.png" />
+    <link rel="preconnect" href="https://ailillu.kz" />
+    <style>
+      /* First paint comes from here, before any CSS or JS file has arrived. */
+      html, body { margin: 0; height: 100%; background: #fff; }
+      @media (prefers-color-scheme: dark) { html, body { background: #121014; } }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      // Starts with the page, not after the JS bundle: the list can draw as soon as React is up.
+      window.__catalog = fetch('./data/catalog.json').then((r) => r.json());
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

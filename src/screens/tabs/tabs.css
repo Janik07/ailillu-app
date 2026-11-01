@@ -1,0 +1,24 @@
+.tab-head {
+  padding-top: 16px;
+}
+
+.tab-empty {
+  line-height: 1.5;
+}
+
+.profile-note {
+  margin-top: 16px;
+}
+
+.profile-heading {
+  margin-top: 22px;
+  font-size: 16px;
+}
+
+.profile-themes {
+  margin-top: 10px;
+}
+
+.profile-reset {
+  margin-top: 14px;
+}

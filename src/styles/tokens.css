@@ -1,0 +1,48 @@
+/* Ailillu brand: #673AB7 and Golos Text, taken from the production app config. */
+:root {
+  --bg: #fff;
+  --surf: #f4f2f8;
+  --surf2: #ece9f2;
+  --ink: #17151c;
+  --muted: #6f6b7a;
+  --line: #e9e6ef;
+  --accent: #673ab7;
+  --accent-ink: #fff;
+  --soft: #ede7f6;
+  --warn: #b4430f;
+  --page: #e9e6ef;
+  --shadow: 0 6px 24px rgba(23, 21, 28, 0.12);
+  --font: 'Golos Text Variable', 'Segoe UI', system-ui, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg: #121014;
+    --surf: #1e1b24;
+    --surf2: #29252f;
+    --ink: #f3f1f7;
+    --muted: #a29dae;
+    --line: #2e2a35;
+    --accent: #a98ee2;
+    --soft: #2b2340;
+    --warn: #f0a27a;
+    --page: #0b0a0d;
+    --shadow: 0 6px 24px rgba(0, 0, 0, 0.5);
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme='dark'] {
+  --bg: #121014;
+  --surf: #1e1b24;
+  --surf2: #29252f;
+  --ink: #f3f1f7;
+  --muted: #a29dae;
+  --line: #2e2a35;
+  --accent: #a98ee2;
+  --soft: #2b2340;
+  --warn: #f0a27a;
+  --page: #0b0a0d;
+  --shadow: 0 6px 24px rgba(0, 0, 0, 0.5);
+  color-scheme: dark;
+}

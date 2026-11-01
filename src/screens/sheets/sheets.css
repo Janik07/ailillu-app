@@ -1,0 +1,51 @@
+.qr-head {
+  padding-top: 4px;
+}
+
+.qr-head p {
+  margin: 6px 0 0;
+}
+
+.qr-venue {
+  margin-bottom: 12px;
+}
+
+.tables {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+
+.table-btn {
+  height: 52px;
+  border-radius: 14px;
+  background: var(--surf);
+  font-size: 17px;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+.branches-head {
+  padding-bottom: 8px;
+}
+
+.branch-mark {
+  width: 36px;
+  height: 36px;
+  border-radius: 18px;
+  background: var(--soft);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+
+.branch-mark.on {
+  background: var(--accent);
+  color: #fff;
+}
+
+.city-check {
+  color: var(--accent);
+}

@@ -1,0 +1,120 @@
+.map-area {
+  position: relative;
+  flex: 1;
+  margin-top: 10px;
+  min-height: 0;
+}
+
+.map-box {
+  position: absolute;
+  inset: 0;
+  background: var(--surf);
+}
+
+.pin {
+  cursor: pointer;
+}
+
+.pin .ring {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  padding: 3px;
+  background: #fff;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #673ab7;
+  font-weight: 800;
+  font-size: 14px;
+}
+
+.pin .ring img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+.pin .ring.many {
+  background: #673ab7;
+  color: #fff;
+  border: 3px solid #fff;
+  padding: 0;
+}
+
+.pin .tail {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 7px solid #fff;
+  margin: -1px auto 0;
+}
+
+.pin.on .ring {
+  width: 48px;
+  height: 48px;
+  background: #673ab7;
+}
+
+.pin.on .tail {
+  border-top-color: #673ab7;
+}
+
+.me-dot {
+  display: block;
+  width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  background: #4285f4;
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 14px rgba(66, 133, 244, 0.16);
+}
+
+.map-locate {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background: var(--bg);
+  box-shadow: var(--shadow);
+}
+
+.map-card,
+.map-hint {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  background: var(--bg);
+  box-shadow: var(--shadow);
+}
+
+.map-card {
+  border-radius: 22px;
+  padding: 14px;
+}
+
+.map-card-title {
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.map-actions {
+  margin-top: 12px;
+  gap: 8px;
+}
+
+.map-hint {
+  border-radius: 16px;
+  padding: 10px 12px;
+  right: 56px;
+}
+
+/* The attribution stays required but sits out of the way of the hint card. */
+.map-area .maplibregl-ctrl-bottom-right {
+  bottom: 56px;
+}

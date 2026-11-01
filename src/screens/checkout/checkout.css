@@ -1,0 +1,224 @@
+.cart-scroll {
+  padding-bottom: 170px;
+}
+
+.cart-hint {
+  margin-top: 6px;
+}
+
+.cart-price {
+  margin-top: 2px;
+}
+
+.cart-comment {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.cart-comment input {
+  flex: 1;
+  border: 0;
+  background: none;
+  outline: none;
+  min-width: 0;
+  font-size: 16px;
+}
+
+.cart-heading {
+  font-size: 16px;
+  margin-top: 18px;
+}
+
+.pay-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.pay-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 16px;
+  border: 1.5px solid var(--line);
+  text-align: left;
+}
+
+.pay-option.on {
+  border-color: var(--accent);
+  background: var(--soft);
+}
+
+.pay-single {
+  padding: 12px 0;
+}
+
+.cart-bar {
+  background: var(--bg);
+  border-top: 1px solid var(--line);
+}
+
+.cart-total {
+  margin-bottom: 10px;
+}
+
+.cart-total .price {
+  font-size: 22px;
+}
+
+.phone-text {
+  line-height: 1.45;
+}
+
+.phone-field {
+  height: 56px;
+  border-radius: 16px;
+  border: 2px solid var(--accent);
+  padding: 0 16px;
+  gap: 10px;
+}
+
+.phone-field input {
+  flex: 1;
+  border: 0;
+  background: none;
+  outline: none;
+  font-size: 17px;
+  min-width: 0;
+}
+
+.phone-agree {
+  margin-top: 12px;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.phone-agree input {
+  width: 20px;
+  height: 20px;
+  accent-color: #673ab7;
+  margin: 0;
+}
+
+.phone-next {
+  margin-top: 18px;
+}
+
+.code-field {
+  width: 100%;
+  height: 64px;
+  border-radius: 16px;
+  border: 2px solid var(--accent);
+  background: none;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: 0.6em;
+}
+
+.kaspi-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-top: 30px;
+}
+
+.kaspi-big {
+  width: 84px;
+  height: 84px;
+  border-radius: 42px;
+  font-size: 34px;
+}
+
+.kaspi-label {
+  margin-top: 22px;
+}
+
+.kaspi-sum {
+  font-size: 42px;
+}
+
+.kaspi-wait {
+  margin-top: 16px;
+  padding: 10px 14px;
+  border-radius: 14px;
+  background: var(--soft);
+  color: var(--accent);
+  font-weight: 700;
+  gap: 8px;
+}
+
+.kaspi-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background: var(--accent);
+}
+
+.kaspi-text {
+  line-height: 1.5;
+  max-width: 300px;
+}
+
+.kaspi-actions {
+  padding-block: 0 calc(18px + env(safe-area-inset-bottom, 0px));
+}
+
+.btn.kaspi-pay {
+  background: #f14635;
+}
+
+.status-scroll {
+  padding-bottom: 120px;
+}
+
+.status-mark {
+  width: 56px;
+  height: 56px;
+  border-radius: 28px;
+  background: var(--soft);
+  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.status-title {
+  margin-top: 14px;
+}
+
+.status-text {
+  line-height: 1.5;
+}
+
+.status-lines {
+  border-radius: 20px;
+  background: var(--surf);
+  padding: 8px 14px;
+}
+
+.status-line {
+  padding: 6px 0;
+}
+
+.status-sum {
+  border-top: 1px solid var(--line);
+  margin-top: 6px;
+  padding-top: 10px;
+}
+
+.status-note {
+  margin-top: 14px;
+}
+
+.status-bar {
+  gap: 8px;
+  padding-block: 10px calc(16px + env(safe-area-inset-bottom, 0px));
+  background: var(--bg);
+}
+
