@@ -1,6 +1,6 @@
 import { plural } from '../../domain/format';
 import { distanceKm, distanceLabel, type Point } from '../../domain/geo';
-import { useNav } from '../../nav/stack';
+import { menuRoute, useNav } from '../../nav/stack';
 import { useApp } from '../../store/app';
 import { useChain } from '../../store/data';
 import { Icon } from '../../ui/Icon';
@@ -33,7 +33,7 @@ export function BranchesSheet({ chainId }: { chainId: string }) {
           <button
             key={branch.slug}
             className="list-row"
-            onClick={() => nav.replaceTop({ type: 'venue', chain: chain.id, branch: index })}
+            onClick={() => nav.replaceTop(menuRoute(chain.branches[index]))}
           >
             <span className={`branch-mark${position === 0 && km != null ? ' on' : ''}`}>
               <Icon name="pin" size={18} />

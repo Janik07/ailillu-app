@@ -200,9 +200,9 @@ const FOOD_TYPES: Record<string, string> = {
   national: 'Национальная кухня',
 };
 
+// "bar" is not here: one cocktail category does not make a café a bar, see venueMeta.
 const TAGS: [string, RegExp][] = [
   ['breakfast', /завтрак/],
-  ['bar', /пиво|вино|коктейл|виски|водк|коньяк/],
   ['sushi', /суши|ролл/],
   ['doner', /донер|денер|бургер|шаурм/],
 ];
@@ -231,5 +231,7 @@ export function venueMeta(r: ApiRestaurant, menu: ApiMenu): VenueMeta {
     if (m === 'delivery') return menu.policy.delivery_enabled === true;
     return true;
   });
-  return { type, tags: TAGS.filter(([, rx]) => rx.test(catText)).map(([t]) => t), modes, items: items.length };
+  const tags = TAGS.filter(([, rx]) => rx.test(catText)).map(([t]) => t);
+  if (shares.alcohol >= 0.2) tags.splice(1, 0, 'bar');
+  return { type, tags, modes, items: items.length };
 }

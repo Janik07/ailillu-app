@@ -4,7 +4,7 @@ import { GROUP_NAMES, GROUP_ORDER, type MenuItem, type MenuSection, type Section
 import { defaultSelection, firstMissing, selectionText } from '../../domain/modifiers';
 import { useNav, type MenuMode } from '../../nav/stack';
 import { cartCount, cartTotal, useApp } from '../../store/app';
-import { useMenu } from '../../store/data';
+import { useData, useMenu } from '../../store/data';
 import { Icon } from '../../ui/Icon';
 import { LoadError, Photo, Spinner } from '../../ui/parts';
 import './menu.css';
@@ -81,7 +81,7 @@ const Section = memo(function Section({
 }) {
   const Item = section.layout === 'grid' ? ItemCard : ItemRow;
   return (
-    <section id={`sec-${section.id}`} data-section={section.id} className={`pad menu-section ${section.layout}`}>
+    <section id={`sec-${section.id}`} data-section={section.id} className={`pad menu-section layout-${section.layout}`}>
       <div className="h2">
         {section.name} <span className="muted count">{section.items.length}</span>
       </div>
@@ -118,6 +118,15 @@ export function MenuScreen({ slug, mode, table, focus }: Props) {
   const scroller = useRef<HTMLDivElement>(null);
   const chipRow = useRef<HTMLDivElement>(null);
   const focusDone = useRef(false);
+
+  const catalog = useData((s) => s.catalog);
+  const owner = useMemo(() => {
+    for (const c of catalog ?? []) {
+      const index = c.branches.findIndex((b) => b.slug === slug);
+      if (index >= 0) return { chain: c.id, index };
+    }
+    return null;
+  }, [catalog, slug]);
 
   const browse = mode === 'browse';
   const sections = useMemo(() => {
@@ -276,6 +285,15 @@ export function MenuScreen({ slug, mode, table, focus }: Props) {
           <div className="menu-title">{menu.title}</div>
           <div className={`small menu-context${browse ? ' quiet' : ''}`}>{context}</div>
         </div>
+        {owner && (
+          <button
+            className="iconbtn"
+            aria-label="О заведении: адрес и часы"
+            onClick={() => nav.push({ type: 'venue', chain: owner.chain, branch: owner.index })}
+          >
+            <Icon name="info" />
+          </button>
+        )}
       </div>
 
       {mode === 'table' && (menu.canCallWaiter || menu.canCallBill) && (

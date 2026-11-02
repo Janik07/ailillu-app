@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { money } from '../../domain/format';
-import { useNav } from '../../nav/stack';
+import { menuRoute, useNav } from '../../nav/stack';
 import { useApp, type Theme } from '../../store/app';
 import { useData } from '../../store/data';
 import { Icon } from '../../ui/Icon';
@@ -50,7 +50,7 @@ export function FavoritesTab() {
       <div className="scroll pad">
         {list.length ? (
           list.map((c) => (
-            <button key={c.id} className="list-row" onClick={() => nav.push({ type: 'venue', chain: c.id, branch: 0 })}>
+            <button key={c.id} className="list-row" onClick={() => nav.push(c.branches.length > 1 ? { type: 'branches', chain: c.id } : menuRoute(c.branches[0]))}>
               <ChainThumb chain={c} size={52} />
               <div className="grow">
                 <b>{c.title}</b>

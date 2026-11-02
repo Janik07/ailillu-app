@@ -6,7 +6,7 @@ import { mediaUrl } from '../../api/client';
 import type { Branch, Chain } from '../../domain/catalog';
 import { plural } from '../../domain/format';
 import { distanceKm, distanceLabel, type Point } from '../../domain/geo';
-import { useNav } from '../../nav/stack';
+import { menuRoute, useNav } from '../../nav/stack';
 import { useApp } from '../../store/app';
 import { Icon } from '../../ui/Icon';
 import { ChainThumb } from '../../ui/parts';
@@ -256,7 +256,7 @@ export default function MapView({ chains, city }: { chains: Chain[]; city: strin
               <Icon name="route" />
               Маршрут
             </a>
-            <button className="btn" onClick={() => nav.push({ type: 'venue', chain: sel.chain.id, branch: sel.index })}>
+            <button className="btn" onClick={() => nav.push(menuRoute(sel.branch))}>
               Открыть
             </button>
           </div>

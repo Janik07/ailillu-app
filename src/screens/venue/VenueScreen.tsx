@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { money, plural } from '../../domain/format';
 import { distanceKm, distanceLabel, type Point } from '../../domain/geo';
 import { GROUP_NAMES, GROUP_ORDER } from '../../domain/menu';
-import { useNav } from '../../nav/stack';
+import { useNav, useStack } from '../../nav/stack';
 import { useApp } from '../../store/app';
 import { useChain, useMenu } from '../../store/data';
 import { Icon } from '../../ui/Icon';
@@ -11,6 +11,7 @@ import './venue.css';
 
 export function VenueScreen({ chainId, index }: { chainId: string; index: number }) {
   const nav = useNav();
+  const stack = useStack();
   const chain = useChain(chainId);
   const branch = chain?.branches[index] ?? chain?.branches[0];
   const { menu, failed, retry } = useMenu(branch?.slug ?? '');
@@ -37,7 +38,12 @@ export function VenueScreen({ chainId, index }: { chainId: string; index: number
         ([, n]) => n > 0,
       )
     : [];
-  const openMenu = (mode: 'browse' | 'takeaway') => nav.push({ type: 'menu', slug: branch.slug, mode });
+  // Usually this page was opened from the menu's header, so going back to that menu beats stacking a copy.
+  const below = stack[stack.length - 2];
+  const openMenu = (mode: 'browse' | 'takeaway') =>
+    below?.type === 'menu' && below.slug === branch.slug && below.mode === mode
+      ? nav.pop()
+      : nav.push({ type: 'menu', slug: branch.slug, mode });
 
   return (
     <div className="screen pushed">

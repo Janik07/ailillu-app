@@ -16,6 +16,13 @@ export type Route =
   | { type: 'phone'; payNow: boolean; comment: string }
   | { type: 'city' };
 
+/** A venue opens straight into its menu; the venue page is one tap away in the menu header. */
+export const menuRoute = (branch: { slug: string; modes: readonly string[] }): Route => ({
+  type: 'menu',
+  slug: branch.slug,
+  mode: branch.modes.includes('takeaway') ? 'takeaway' : 'browse',
+});
+
 const SHEETS = new Set<Route['type']>(['dish', 'index', 'qr', 'branches', 'phone', 'city']);
 export const isSheet = (r: Route) => SHEETS.has(r.type);
 

@@ -3,7 +3,7 @@ import type { Chain } from '../../domain/catalog';
 import { money, plural } from '../../domain/format';
 import { distanceKm, distanceLabel, type Point } from '../../domain/geo';
 import type { DishEntry } from '../../domain/menu';
-import { useNav } from '../../nav/stack';
+import { menuRoute, useNav } from '../../nav/stack';
 import { useApp } from '../../store/app';
 import { loadDishIndex, useData } from '../../store/data';
 import { Icon } from '../../ui/Icon';
@@ -99,7 +99,7 @@ export function HomeScreen() {
 
   const open = (c: Chain) => {
     if (c.branches.length > 1) nav.push({ type: 'branches', chain: c.id });
-    else nav.push({ type: 'venue', chain: c.id, branch: 0 });
+    else nav.push(menuRoute(c.branches[0]));
   };
 
   return (
