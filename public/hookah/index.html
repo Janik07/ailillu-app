@@ -793,7 +793,7 @@ function initScene(){
   view.prepend(renderer.domElement);
   scene = new THREE.Scene();
   scene.background = new THREE.Color('#1a120c');
-  camera = new THREE.PerspectiveCamera(32, 1, .1, 200); camera.position.set(4.2, 2.6, 7.5);
+  camera = new THREE.PerspectiveCamera(42, 1, .1, 200); camera.position.set(4.2, 2.6, 7.5);
   makeTextures();
   pmrem = new THREE.PMREMGenerator(renderer);
   scene.environment = pmrem.fromScene(new RoomEnvironment(renderer), .03).texture;
@@ -808,8 +808,8 @@ function initScene(){
     hdr.mapping = THREE.EquirectangularReflectionMapping; hdr.needsUpdate = true;
     scene.environment = pmrem.fromEquirectangular(hdr).texture; hdr.dispose();
   }).catch(() => {});
-  new THREE.TextureLoader().load('img/bar.jpg', t => { t.mapping = THREE.EquirectangularReflectionMapping; t.colorSpace = THREE.SRGBColorSpace; scene.background = t; });
-  scene.backgroundBlurriness = .03; scene.backgroundIntensity = .5;
+  new THREE.TextureLoader().load('img/bar.jpg', t => { t.mapping = THREE.EquirectangularReflectionMapping; t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = renderer.capabilities.getMaxAnisotropy(); t.generateMipmaps = true; scene.background = t; });
+  scene.backgroundBlurriness = 0; scene.backgroundIntensity = .55;
   scene.backgroundRotation.y = BAR_ROT; scene.environmentRotation.y = BAR_ROT;
   const key = new THREE.SpotLight('#ffd9a8', 45, 0, .55, .9, 2);
   key.position.set(1.5, 8, 3); key.target.position.set(0, 1.2, 0);
